@@ -1,4 +1,6 @@
 class BlogPostsController < ApplicationController
+  skip_before_filter :authorize
+
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
   # GET /blog_posts
