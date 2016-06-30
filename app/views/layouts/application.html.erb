@@ -9,17 +9,17 @@
 <body class="<%= controller.controller_name %>">
   <div id="banner">
     <%= image_tag("logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %>
-  </div>
-  <div id="columns">
-    <div id="side">
+    <%= @page_title || "Open Blog" %>
+    <div id="menu">
       <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
+        <li><a href="http://www....">News</a></li>
+        <li><a href="http://www....">Videos</a></li>
+        <li><a href="http://www....">DIY</a></li>
+        <li><a href="http://www....">Food</a></li>
       </ul>
     </div>
+  </div>
+  <div id="columns">
     <div id="main">
       <%= yield %>
     </div>

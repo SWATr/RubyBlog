@@ -14,15 +14,40 @@
  *= require_self
  */
 #banner {
-  background: #9c9;
+  background: #355;
   padding: 10px;
-  border-bottom: 2px solid;
+  border-bottom: 10px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: #fff;
   text-align: center;
 
   img {
     float: left;
+  }
+  #menu {
+    ul {
+      list-style-type: none;
+      margin: 50;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
   }
 }
 
@@ -35,31 +60,4 @@
   font: bold smaller sans-serif;
 }
 
-#columns {
-  background: #141;
-
-  #main {
-    margin-left: 17em;
-    padding: 1em;
-    background: white;
-  }
-
-  #side {
-    float: left;
-    padding: 1em 2em;
-    width: 13em;
-    background: #141;
-
-    ul {
-      padding: 0;
-      li {
-        list-style: none;
-        a {
-          color: #bfb;
-          font-size: small;
-        }
-      }
-    }
-  }
-}
 
