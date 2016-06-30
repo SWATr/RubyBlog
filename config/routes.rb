@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'blog/index'
-  
-  #get 'blog_posts/new'
   get 'admin' => 'admin#index'
  
   controller :sessions do
@@ -11,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :blog_post
+  resources :blog_posts
 
   root to: 'blog#index', as: 'blog'
 end

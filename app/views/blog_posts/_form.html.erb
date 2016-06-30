@@ -27,10 +27,14 @@
     <%= f.label :post_author %><br>
     <%= f.text_field :post_author %>
   </div>
+
+  <%= Time.now.getutc %>
+  
   <div class="field">
     <%= f.label :post_time %><br>
     <%= f.datetime_select :post_time %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
