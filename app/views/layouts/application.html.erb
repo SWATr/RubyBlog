@@ -6,13 +6,26 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-<div id="footer">
-  <%= render "layouts/footer" %>
-</div>
-
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Open Blog" %>
+    <div id="menu">
+      <ul>
+        <li><a href="http://www....">News</a></li>
+        <li><a href="http://www....">Videos</a></li>
+        <li><a href="http://www....">DIY</a></li>
+        <li><a href="http://www....">Food</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="columns">
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <%= render "layouts/footer" %>
+  </div>
 </body>
 </html>
