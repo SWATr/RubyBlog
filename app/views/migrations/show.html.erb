@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Add admin to users:</strong>
+  <%= @migration.add_admin_to_users %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @migration.admin %>
+</p>
+
+<%= link_to 'Edit', edit_migration_path(@migration) %> |
+<%= link_to 'Back', migrations_path %>

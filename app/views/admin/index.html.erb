@@ -1,0 +1,16 @@
+
+<% @username = User.find(session[:user_id]).email %>
+<% @user = @username.gsub(/@.*/, '') %>
+<% @posts = BlogPost.all %>
+<h1>Welcome <%= @user%> </h1>
+<p>Recent Posts:</p>
+<% @posts.each do |post| %>
+  <div class="entry">
+    <%= image_tag(post.post_image_url) %>
+    <h3><%= post.post_title %></h3>
+    <p><%= sanitize(post.post_content) %></p>
+    <div class="post_info_line">
+      <span class="Posted:"><%=  post.post_time %></span>
+    </div>
+  </div>
+<% end %>

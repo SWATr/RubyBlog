@@ -1,0 +1,25 @@
+<%= form_for(@migration) do |f| %>
+  <% if @migration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@migration.errors.count, "error") %> prohibited this migration from being saved:</h2>
+
+      <ul>
+      <% @migration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :add_admin_to_users %><br>
+    <%= f.text_field :add_admin_to_users %>
+  </div>
+  <div class="field">
+    <%= f.label :admin %><br>
+    <%= f.number_field :admin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

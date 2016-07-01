@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+ skip_before_filter :authorize
+
   wrap_parameters :user, include: [:email, :password, :password_confirmation]
 
   # GET /users
