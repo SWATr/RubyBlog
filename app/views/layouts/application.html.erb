@@ -8,7 +8,7 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <div id="banner">
-    <%= image_tag("mainicon.png") %>
+    <%= link_to image_tag("mainicon.png", :alt => 'BuzzfeedMock'), "/" %> 
     <%= @page_title || "Open Blog" %>
     <div id="menu">
       <ul>
