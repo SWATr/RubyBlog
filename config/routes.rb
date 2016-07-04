@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :blog_posts
+  
+  get '/news' => 'pages#news'
+  get '/videos' => 'pages#videos'
+  get '/diy' => 'pages#diy'
+  get '/food' => 'pages#food'
 
   root to: 'blog#index', as: 'blog'
 end
