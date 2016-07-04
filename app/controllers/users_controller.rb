@@ -14,6 +14,12 @@ class UsersController < ApplicationController
      end
    end
 
+    def blog_posts
+    @users = User.find(params[:id]
+    @blog_posts = @user.blog_posts
+    end
+	end
+ 
   
 
   # GET /users/1
