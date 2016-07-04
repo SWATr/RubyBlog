@@ -10,6 +10,7 @@
     <h3><%= post.post_title %></h3>
     <p><%= sanitize(post.post_content) %></p>
     <div class="post_info_line">
+	  <span class="author"><%=  post.post_author %></span>
       <span class="Posted:"><%=  post.post_time %></span>
     </div>
   </div>
