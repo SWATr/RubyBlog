@@ -30,12 +30,11 @@
 <%= link_to 'Back', blog_posts_path %>
 
 <h2>Comments</h2>
-<div id="comments">
-    <%= render :partial => @blog_post.comments %>
-		 
+<div id="blog_comments">
+    <%= render :partial => @blog_post.blog_comments %>		 
 </div>
  
- <%= form_for [@blog_post, Comment.new] do |f| %>
+ <%= form_for [@blog_post, BlogComment.new] do |f| %>
         <p>
                 <%= f.label :body, "New comment" %><br/>
                 <%= f.text_area :body %>

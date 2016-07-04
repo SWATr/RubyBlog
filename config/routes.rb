@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   get 'admin' => 'admin#index'
   get 'users/:id/blog_posts' => 'users#blog_posts', :as => :user_posts
 
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   end
   
   resources :blog_posts do
-    resources :comments, :only => [:create]
+    resources :blog_comments, :only => [:create]
   end
 
   resources :users
