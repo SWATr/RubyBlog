@@ -1,11 +1,11 @@
-
+<% @name = User.find(session[:user_id]) %>
 <% @username = User.find(session[:user_id]).email %>
 <% @user = @username.gsub(/@.*/, '') %>
 <% @posts = BlogPost.all %>
-<!-- <% @userPost = @username.blog_posts %> -->
+<% @userPost = @user.blog_posts %>
 <h1>Welcome <%= @user%> </h1>
 <p>Recent Posts:</p>
-<% @blog_posts.each do |post| %>
+<% @userPost.each do |post| %>
   <%= post.inspect %>
   <span class="posted"><%=  time_ago_in_words(post.post_time) %></span>
 <% end %>
