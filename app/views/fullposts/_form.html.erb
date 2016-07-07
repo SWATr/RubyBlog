@@ -1,0 +1,32 @@
+<%= form_for(@fullpost) do |f| %>
+  <% if @fullpost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fullpost.errors.count, "error") %> prohibited this fullpost from being saved:</h2>
+
+      <ul>
+      <% @fullpost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% @name = User.find(session[:user_id]) %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :tag %><br>
+    <%= f.text_area :tag %>
+  </div>
+  <% @username = User.find(session[:user_id]).email %>
+  <%= hidden_field :author, :value => @name %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

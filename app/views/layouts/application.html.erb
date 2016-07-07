@@ -7,19 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
-  <div id="banner">
-   <% if session[:user_id] %>
-   <%= link_to image_tag("logout.png"), logout_path, :method => :delete %>
-
-   <% else %>
-   <%= link_to image_tag("person.png"), "/admin" %>
-
-   <% end %> 
-   
-   
+  
+<div id="banner">
     <%= link_to image_tag("mainicon.png", :alt => 'BuzzfeedMock'), "/" %> 
     <%= @page_title || "Open Blog" %>
-	
+    <% if session[:user_id] %>
+        <lir><%= link_to image_tag("logout.png"), logout_path, :method => :delete %></lir>
+      <% else %>
+        <lir><%= link_to image_tag("person.png"), "/admin" %></lir>
+    <% end %> 
     <div id="menu">
       <ul>
         <lil><a href="/news">News</a></lil>

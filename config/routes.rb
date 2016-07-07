@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  resources :fullposts
+ 
   get 'admin' => 'admin#index'
   get 'users/:id/blog_posts' => 'users#blog_posts', :as => :user_posts
 
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :blog_posts
+  resources :fullposts
+
   
   get '/news' => 'pages#news'
   get '/videos' => 'pages#videos'

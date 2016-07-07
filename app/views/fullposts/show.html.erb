@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @fullpost.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @fullpost.body %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @fullpost.tag %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @fullpost.author %>
+</p>
+
+<%= link_to 'Edit', edit_fullpost_path(@fullpost) %> |
+<%= link_to 'Back', fullposts_path %>
