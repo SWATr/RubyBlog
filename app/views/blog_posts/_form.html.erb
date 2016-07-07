@@ -23,15 +23,15 @@
     <%= f.label :post_image_url %><br>
     <%= f.text_field :post_image_url %>
   </div>
+
+  <% @username = User.find(session[:user_id]).email %>
   <div class="field">
-    <%= f.label :post_author %><br>
-    <%= f.text_field :post_author %>
+    <%= f.hidden_field :post_author, :value => @username %>
   </div>
 
   <%= Time.now.getutc %>
   
   <div class="field">
-    <%= f.label :post_time %><br>
     <%= f.datetime_select :post_time %>
   </div>
 
