@@ -2,11 +2,15 @@
   <% if @fullpost.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fullpost.errors.count, "error") %> prohibited this fullpost from being saved:</h2>
-
+      <% @acceptedTags = "Please use accepted tags: Food, DIY, News, or Videos" %>
       <ul>
       <% @fullpost.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% if message == "Tag must be accepted" %>   
+	  <li><%= @acceptedTags %></li>
+	  <% else %>
+	  <li><%= message %></li>
       <% end %>
+	  <% end %>
       </ul>
     </div>
   <% end %>
