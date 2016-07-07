@@ -23,6 +23,10 @@
     <%= f.label :post_image_url %><br>
     <%= f.text_field :post_image_url %>
   </div>
+  <div class="field">
+    <%= f.label :post_tag %><br>
+    <%= f.text_area :post_tag %>
+  </div>
 
   <% @username = User.find(session[:user_id]).email %>
   <div class="field">

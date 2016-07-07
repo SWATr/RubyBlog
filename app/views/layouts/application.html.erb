@@ -9,11 +9,9 @@
 <body class="<%= controller.controller_name %>">
   <div id="banner">
    <% if session[:user_id] %>
-   <%= link_to image_tag("logout.png"), logout_path, :method => :delete %>
-
+     <%= link_to image_tag("logout.png"), logout_path, :method => :delete %>
    <% else %>
-   <%= link_to image_tag("person.png"), "/admin" %>
-
+     <%= link_to image_tag("person.png"), "/admin" %>
    <% end %> 
    
    
