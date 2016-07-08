@@ -18,10 +18,10 @@
 	
     <div id="menu">
       <ul>
-        <lil><a href="/news">News</a></lil>
-        <lil><a href="/videos">Videos</a></lil>
-        <lil><a href="/diy">DIY</a></lil>
-        <lil><a href="/food">Food</a></lil>
+        <lil><%= link_to "News", news_path %></lil>
+        <lil><%= link_to "Videos", videos_path %></lil>
+        <lil><%= link_to "DIY", diy_path %></lil>
+        <lil><%= link_to "Food", food_path %></lil>
 
         <% if session[:user_id] %>
           <lir><%= link_to "User CP", admin_path %><lir>
