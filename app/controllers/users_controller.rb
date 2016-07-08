@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-     format.html { redirect_to users_url,
+     format.html { redirect_to blog_url,
      notice: "User #{@email} was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
