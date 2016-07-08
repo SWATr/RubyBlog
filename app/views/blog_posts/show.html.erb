@@ -26,9 +26,11 @@
   <%= @blog_post.post_tag %>
 </p>
 
-<% @username = User.find(session[:user_id]).email %>
-<% if @username == @blog_post.post_author %>
-<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+<% unless User.find(session[:user_id].nil?) %>
+  <% @username = User.find(session[:user_id]) %>
+  <% if @username == @blog_post.post_author %>
+    <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+  <% end %>
 <% end %>
 
 <%= link_to 'Back', blog_posts_path %>

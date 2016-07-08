@@ -1,8 +1,11 @@
-<% @username = User.find(session[:user_id]).email %>
+<% unless User.find(session[:user_id].nil?) %>
+  <% @username = User.find(session[:user_id]) %>
+<% end %>
+
 <%= div_for blog_comment do %>
         <p>
                 <strong>
-                        Posted by: <%=@username %> <%= time_ago_in_words(blog_comment.created_at) %> ago
+                        Posted <%= time_ago_in_words(blog_comment.created_at) %> ago
          
                 </strong>
                 <br/>
