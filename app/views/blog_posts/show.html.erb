@@ -26,9 +26,6 @@
   <%= @blog_post.post_tag %>
 </p>
 
-<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-<%= link_to 'Back', blog_posts_path %>
-
 <h2>Comments</h2>
 <div id="blog_comments">
     <%= render :partial => @blog_post.blog_comments %>		 
