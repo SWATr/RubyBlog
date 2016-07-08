@@ -9,10 +9,6 @@
 <body class="<%= controller.controller_name %>">
   <div id="banner">
 
-
-
-   
-   
     <%= link_to image_tag("mainicon.png", :alt => 'BuzzfeedMock'), "/" %> 
     <%= @page_title || "Open Blog" %>
 	
@@ -24,7 +20,7 @@
         <lil><%= link_to "Food", food_path %></lil>
 
         <% if session[:user_id] %>
-          <lir><%= link_to "User CP", admin_path %><lir>
+          <lir><%= link_to "User CP", blog_posts_path %><lir>
           <lir><%= link_to "Log Out", logout_path, :method => :delete %></lir>
         <% else %>
           <lir><%= link_to "Log In", login_path %><lir>

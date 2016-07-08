@@ -1,7 +1,16 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<h1>Listing Blog Posts</h1>
+<% @username = User.find(session[:user_id]).email %>
+<% @user = @username.gsub(/@.*/, '') %>
+<h1>Welcome <%= @user%>!</h1>
+
+
+<h2>Controls:</h2>
+
+<h3><%= link_to "New Post", new_blog_post_path %><h3>
+
+<h2>Listing Blog Posts</h2>
 
 <table>
   <thead>
@@ -16,7 +25,8 @@
   </thead>
 
   <tbody>
-    <% @blog_posts.each do |blog_post| %>
+    <% @posts = BlogPost.where(post_author: @username) %>
+    <% @posts.each do |blog_post| %>
       <tr>
         <td><%= blog_post.post_title %></td>
         <td><%= blog_post.post_content %></td>
@@ -36,4 +46,3 @@
 
 <br>
 
-<%= link_to 'New Blog post', new_blog_post_path %>

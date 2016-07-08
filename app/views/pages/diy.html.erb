@@ -1,7 +1,6 @@
-<% @posts = BlogPost.all %>
-<h1>DIY</h1>
+<% @posts = BlogPost.where(post_tag: "DIY") %>
+<h1>News</h1>
 <% @posts.each do |post| %> 
-<% if post.post_tag == "DIY" %>
 <% @title = post.post_title %> 
   <div class="entry">
     <h3><%= link_to @title, post %></h3>
@@ -11,5 +10,4 @@
       <span class="posted"><%=  time_ago_in_words(post.created_at) %> ago</span>
     </div>
 	</div>
-<% end %>
 <% end %>

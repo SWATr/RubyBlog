@@ -1,7 +1,6 @@
-<% @posts = BlogPost.all %>
+<% @posts = BlogPost.where(post_tag: "NEWS") %>
 <h1>News</h1>
 <% @posts.each do |post| %> 
-<% if post.post_tag == "NEWS" %>
 <% @title = post.post_title %> 
   <div class="entry">
     <h3><%= link_to @title, post %></h3>
@@ -12,4 +11,4 @@
     </div>
 	</div>
 <% end %>
-<% end %>
+
