@@ -26,16 +26,12 @@
   <%= @blog_post.post_tag %>
 </p>
 
-<<<<<<< HEAD
 <% @username = User.find(session[:user_id]).email %>
 <% if @username == @blog_post.post_author %>
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-		<% end %>
+<% end %>
 
 <%= link_to 'Back', blog_posts_path %>
-
-=======
->>>>>>> 2919db0a0ea0731e681a52b38cac191ba6cc0526
 <h2>Comments</h2>
 <div id="blog_comments">
     <%= render :partial => @blog_post.blog_comments %>		 
