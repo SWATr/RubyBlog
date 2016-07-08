@@ -11,6 +11,6 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.post_title %></td>
-    <td><span class="posted"><%=  time_ago_in_words(post.post_time) %> ago.</span></td>
+    <td><span class="posted"><%= time_ago_in_words(post.created_at) %> ago.</span></td>
   </tr>
 <% end %>
