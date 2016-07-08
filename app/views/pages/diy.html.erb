@@ -1,6 +1,3 @@
-<% @name = User.find(session[:user_id]) %>
-<% @username = User.find(session[:user_id]).email %>
-<% @user = @username.gsub(/@.*/, '') %>
 <% @posts = BlogPost.all %>
 <h1>DIY</h1>
 <% @posts.each do |post| %> 
