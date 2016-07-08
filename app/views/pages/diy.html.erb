@@ -1,2 +1,18 @@
-<p>Hello World</p>
-  
+<% @name = User.find(session[:user_id]) %>
+<% @username = User.find(session[:user_id]).email %>
+<% @user = @username.gsub(/@.*/, '') %>
+<% @posts = BlogPost.all %>
+<h1>Food</h1>
+<% @posts.each do |post| %> 
+<% if post.post_tag == "DIY" %>
+<% @title = post.title %> 
+  <div class="entry">
+    <h3><%= link_to @title, post %></h3>
+    <p><%= sanitize(post.body) %></p>
+    <div class="post_info_line">
+      <span class="author"><%=  post.author %></span>
+      <span class="posted"><%=  time_ago_in_words(post.created_at) %></span>
+    </div>
+	</div>
+<% end %>
+<% end %>  

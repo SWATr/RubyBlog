@@ -7,4 +7,7 @@ class BlogPost < ActiveRecord::Base
   
   validates :post_title, :post_content, :post_author, presence: true
   validates :post_title, uniqueness: true
+  
+  validates :tag, acceptance: { accept: 'Food' }, acceptance: { accept: 'DIY' }, acceptance: { accept: 'Vidoes' }, acceptance: { accept: 'News' }
+
 end
