@@ -11,7 +11,7 @@
     <p><%= sanitize(post.post_content) %></p>
     <div class="post_info_line">
       <span class="author">Posted by <%=  post.post_author.gsub(/@.*/, '') %></span>
-      <span class="posted"><%=  time_ago_in_words(post.post_time) %> ago</span>
+      <span class="posted"><%= time_ago_in_words(post.created_at) %> ago</span>
     </div>
 
   </div>

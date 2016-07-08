@@ -33,12 +33,6 @@
     <%= f.hidden_field :post_author, :value => @username %>
   </div>
 
-  <%= Time.now.getutc %>
-  
-  <div class="field">
-    <%= f.datetime_select :post_time %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
