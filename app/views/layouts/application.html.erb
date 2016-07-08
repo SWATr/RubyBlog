@@ -8,11 +8,9 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <div id="banner">
-   <% if session[:user_id] %>
-     <%= link_to image_tag("logout.png"), logout_path, :method => :delete %>
-   <% else %>
-     <%= link_to image_tag("person.png"), "/admin" %>
-   <% end %> 
+
+
+
    
    
     <%= link_to image_tag("mainicon.png", :alt => 'BuzzfeedMock'), "/" %> 
@@ -25,6 +23,12 @@
         <lil><a href="/diy">DIY</a></lil>
         <lil><a href="/food">Food</a></lil>
 
+        <% if session[:user_id] %>
+          <lir><%= link_to "User CP", admin_path %><lir>
+          <lir><%= link_to "Log Out", logout_path, :method => :delete %></lir>
+        <% else %>
+          <lir><%= link_to "Log In", login_path %><lir>
+        <% end %> 
       </ul>
     </div>
   </div>
