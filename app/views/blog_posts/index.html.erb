@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<% if User.find(session[:user_id].nil?) %>
+<% if (session[:user_id]).blank? %>
   <% controller.redirect_to blog_path %>
 <% else %>
   <% @username = User.find(session[:user_id]).email %>
