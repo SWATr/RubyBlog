@@ -12,6 +12,7 @@
     <div class="post_info_line">
       <span class="author">Posted by <%=  post.post_author.gsub(/@.*/, '') %></span>
       <span class="posted"><%= time_ago_in_words(post.created_at) %> ago</span>
+	  Comments: <%= post.blog_comments.count %>
     </div>
 
   </div>

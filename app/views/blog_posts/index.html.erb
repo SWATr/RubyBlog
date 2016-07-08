@@ -24,8 +24,11 @@
         <td><%= blog_post.post_author %></td>
         <td><%= blog_post.post_tag %></td>
         <td><%= link_to 'Show', blog_post %></td>
+		<% @username = User.find(session[:user_id]).email %>
+        <% if @username == blog_post.post_author %>
         <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
         <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<%end %>
       </tr>
     <% end %>
   </tbody>
