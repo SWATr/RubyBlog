@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% @name = User.find(session[:user_id]) %>
 <% @username = User.find(session[:user_id]).email %>
 <% @user = @username.gsub(/@.*/, '') %>
@@ -16,3 +17,20 @@
 	</div>
 <% end %>
 <% end %>  
+=======
+<% @posts = BlogPost.all %>
+<h1>DIY</h1>
+<% @posts.each do |post| %> 
+<% if post.post_tag == "DIY" %>
+<% @title = post.post_title %> 
+  <div class="entry">
+    <h3><%= link_to @title, post %></h3>
+    <p><%= sanitize(post.post_content) %></p>
+    <div class="post_info_line">
+      <span class="author">Posted by <%=  post.post_author.gsub(/@.*/, '') %></span>
+      <span class="posted"><%=  time_ago_in_words(post.created_at) %> ago</span>
+    </div>
+	</div>
+<% end %>
+<% end %>
+>>>>>>> 2919db0a0ea0731e681a52b38cac191ba6cc0526

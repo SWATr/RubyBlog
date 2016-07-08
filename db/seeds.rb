@@ -4,4 +4,9 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   Mayor.create(name: 'Emanuel', city: cities.first)State.create([
+Tag.create([
+  { name: 'FOOD'    },
+  { name: 'DIY'     },
+  { name: 'NEWS'    }
+])
